@@ -17,7 +17,7 @@ function CurrencyExchangeDashboard() {
         Currency Exchange Dashboard
       </Typography>
       {widgets.map(widget => (
-        <CurrencyWidget key={widget.id} />
+        <CurrencyWidget id={widget.id} key={widget.id} />
       ))}
     </Container>
   )
