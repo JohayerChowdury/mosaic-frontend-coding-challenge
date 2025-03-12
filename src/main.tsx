@@ -4,6 +4,9 @@ import { Provider } from "react-redux"
 import App from "./App"
 import { store } from "./app/store"
 import "./index.css"
+// import { loadState } from "./utils/storageUtils"
+
+// const persistedState = loadState()
 
 const container = document.getElementById("root")
 
