@@ -1,6 +1,6 @@
 // Need to use the React-specific entry point to import `createApi`
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-
+import { API_BASE_URL as API_URL } from "../../api/axiosClient"
 interface Quote {
   id: number
   quote: string
@@ -16,7 +16,7 @@ interface QuotesApiResponse {
 
 // Define a service using a base URL and expected endpoints
 export const quotesApiSlice = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com/quotes" }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${API_URL}/quotes` }),
   reducerPath: "quotesApi",
   // Tag types are used for caching and invalidation.
   tagTypes: ["Quotes"],

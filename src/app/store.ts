@@ -1,14 +1,19 @@
+/// <reference types="redux-persist" />
 import type { Action, ThunkAction } from "@reduxjs/toolkit"
 import { combineSlices, configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
-// import { counterSlice } from "../features/counter/counterSlice"
-// import { quotesApiSlice } from "../features/quotes/quotesApiSlice"
+
+import { counterSlice } from "../features/counter/counterSlice"
+import { quotesApiSlice } from "../features/quotes/quotesApiSlice"
+
+import { loadState, saveState } from "../utils/storageUtils"
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
-// const rootReducer = combineSlices(counterSlice, quotesApiSlice)
+const rootReducer = combineSlices(counterSlice, quotesApiSlice)
 // TODO: replace
-const rootReducer = combineSlices()
+// const rootReducer = combineSlices()
+
 // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>
 
